@@ -24,8 +24,13 @@
 
 package dev.gihwan.springframework.boot.virtual;
 
-public class Main {
-    public static void main(String[] args) {
-        System.out.println("Hello world!");
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class HelloController {
+    @GetMapping("/hello")
+    public String hello() {
+        return "Hello, world! by " + Thread.currentThread().getName();
     }
 }

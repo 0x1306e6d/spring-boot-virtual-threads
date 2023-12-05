@@ -22,30 +22,14 @@
  * SOFTWARE.
  */
 
-plugins {
-    id("java")
-}
+package dev.gihwan.springframework.boot.virtual;
 
-group = "dev.gihwan.springframework.boot.virtual"
-version = "1.0-SNAPSHOT"
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    implementation("org.springframework.boot:spring-boot-starter-web:3.2.0")
-
-    testImplementation(platform("org.junit:junit-bom:5.9.1"))
-    testImplementation("org.junit.jupiter:junit-jupiter")
-}
-
-java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(21)
+@SpringBootApplication
+public class VirtualApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(VirtualApplication.class, args);
     }
-}
-
-tasks.test {
-    useJUnitPlatform()
 }
